@@ -1,0 +1,99 @@
+{
+  "Resources": {
+    "slacksnstopicB48CCD7B": {
+      "Type": "AWS::SNS::Topic",
+      "Properties": {
+        "TopicName": "CDK-CodePipeline-Notifications-SNS"
+      },
+      "Metadata": {
+        "aws:cdk:path": "CDK-Deploy-Pipeline-Stack/Slack-Notifications/slack_sns_topic/Resource"
+      }
+    },
+    "slackchannelConfigurationRoleF5E72DEF": {
+      "Type": "AWS::IAM::Role",
+      "Properties": {
+        "AssumeRolePolicyDocument": {
+          "Statement": [
+            {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "chatbot.amazonaws.com"
+              }
+            }
+          ],
+          "Version": "2012-10-17"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "CDK-Deploy-Pipeline-Stack/Slack-Notifications/slack_channel/ConfigurationRole/Resource"
+      }
+    },
+    "slackchannel6CA402F8": {
+      "Type": "AWS::Chatbot::SlackChannelConfiguration",
+      "Properties": {
+        "ConfigurationName": "CDK-CodePipeline-Notifications",
+        "IamRoleArn": {
+          "Fn::GetAtt": [
+            "slackchannelConfigurationRoleF5E72DEF",
+            "Arn"
+          ]
+        },
+        "SlackChannelId": "C02JB9784MU",
+        "SlackWorkspaceId": "T02JJ1J1KEF",
+        "LoggingLevel": "ERROR",
+        "SnsTopicArns": [
+          {
+            "Ref": "slacksnstopicB48CCD7B"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "CDK-Deploy-Pipeline-Stack/Slack-Notifications/slack_channel/Resource"
+      }
+    },
+    "CDKMetadata": {
+      "Type": "AWS::CDK::Metadata",
+      "Properties": {
+        "Analytics": "v2:deflate64:H4sIAAAAAAAA/3WNwQ6CMBBEv4V7WUQuejPhBwz6A3UtUoFd025jTNN/t8Wzp5lk3sy00HZ72FUn/fY13ucmIjsD8SIaZ9UzeXEBRfUjDcZzcGiSKmz05CFe+WWxhJtJCictN5bcX3K/nzSRWfLKaB/BabFMBf4bJmX1CnHgxWyPWVNK6vyRianp4ADH6umtrV0gsauB4adfa5AH4sYAAAA="
+      },
+      "Metadata": {
+        "aws:cdk:path": "CDK-Deploy-Pipeline-Stack/Slack-Notifications/CDKMetadata/Default"
+      }
+    }
+  },
+  "Parameters": {
+    "BootstrapVersion": {
+      "Type": "AWS::SSM::Parameter::Value<String>",
+      "Default": "/cdk-bootstrap/hnb659fds/version",
+      "Description": "Version of the CDK Bootstrap resources in this environment, automatically retrieved from SSM Parameter Store. [cdk:skip]"
+    }
+  },
+  "Rules": {
+    "CheckBootstrapVersion": {
+      "Assertions": [
+        {
+          "Assert": {
+            "Fn::Not": [
+              {
+                "Fn::Contains": [
+                  [
+                    "1",
+                    "2",
+                    "3",
+                    "4",
+                    "5"
+                  ],
+                  {
+                    "Ref": "BootstrapVersion"
+                  }
+                ]
+              }
+            ]
+          },
+          "AssertDescription": "CDK bootstrap stack version 6 required. Please run 'cdk bootstrap' with a recent version of the CDK CLI."
+        }
+      ]
+    }
+  }
+}

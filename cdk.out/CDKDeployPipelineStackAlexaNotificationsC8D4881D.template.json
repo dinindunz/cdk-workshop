@@ -1,0 +1,180 @@
+{
+  "Resources": {
+    "alexasnstopicF1B1EABB": {
+      "Type": "AWS::SNS::Topic",
+      "Properties": {
+        "TopicName": "tooling-Alexa-SNS"
+      },
+      "Metadata": {
+        "aws:cdk:path": "CDK-Deploy-Pipeline-Stack/Alexa-Notifications/alexa_sns_topic/Resource"
+      }
+    },
+    "notifyalexalambdaroleD9E3B3A0": {
+      "Type": "AWS::IAM::Role",
+      "Properties": {
+        "AssumeRolePolicyDocument": {
+          "Statement": [
+            {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "lambda.amazonaws.com"
+              }
+            }
+          ],
+          "Version": "2012-10-17"
+        },
+        "RoleName": "tooling-Alexa-Lamba-Role"
+      },
+      "Metadata": {
+        "aws:cdk:path": "CDK-Deploy-Pipeline-Stack/Alexa-Notifications/notify_alexa_lambda_role/Resource"
+      }
+    },
+    "notifyalexalambdaroleDefaultPolicyD657B5B8": {
+      "Type": "AWS::IAM::Policy",
+      "Properties": {
+        "PolicyDocument": {
+          "Statement": [
+            {
+              "Action": "sns:*",
+              "Effect": "Allow",
+              "Resource": {
+                "Ref": "alexasnstopicF1B1EABB"
+              }
+            },
+            {
+              "Action": "lambda:*",
+              "Effect": "Allow",
+              "Resource": {
+                "Fn::GetAtt": [
+                  "notifyalexalambdaFE0F0672",
+                  "Arn"
+                ]
+              }
+            }
+          ],
+          "Version": "2012-10-17"
+        },
+        "PolicyName": "notifyalexalambdaroleDefaultPolicyD657B5B8",
+        "Roles": [
+          {
+            "Ref": "notifyalexalambdaroleD9E3B3A0"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "CDK-Deploy-Pipeline-Stack/Alexa-Notifications/notify_alexa_lambda_role/DefaultPolicy/Resource"
+      }
+    },
+    "notifyalexalambdaFE0F0672": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "Code": {
+          "S3Bucket": "cdk-hnb659fds-assets-872203653859-ap-southeast-2",
+          "S3Key": "a1a83ebf5b8b6265f38dbe6f676c4a3b94dc588338dff62c1a5b9d6d76a4d78e.zip"
+        },
+        "Role": {
+          "Fn::GetAtt": [
+            "notifyalexalambdaroleD9E3B3A0",
+            "Arn"
+          ]
+        },
+        "Description": "Send Messages to Alexa Notifications API",
+        "FunctionName": "tooling-Alexa-Lambda",
+        "Handler": "notify_alexa.lambda_handler",
+        "MemorySize": 128,
+        "Runtime": "python3.8",
+        "Timeout": 900
+      },
+      "DependsOn": [
+        "notifyalexalambdaroleDefaultPolicyD657B5B8",
+        "notifyalexalambdaroleD9E3B3A0"
+      ],
+      "Metadata": {
+        "aws:cdk:path": "CDK-Deploy-Pipeline-Stack/Alexa-Notifications/notify_alexa_lambda/Resource",
+        "aws:asset:path": "asset.a1a83ebf5b8b6265f38dbe6f676c4a3b94dc588338dff62c1a5b9d6d76a4d78e",
+        "aws:asset:property": "Code"
+      }
+    },
+    "notifyalexalambdaAllowInvokeCDKDeployPipelineStackAlexaNotificationsalexasnstopic0B261C18CB541C38": {
+      "Type": "AWS::Lambda::Permission",
+      "Properties": {
+        "Action": "lambda:InvokeFunction",
+        "FunctionName": {
+          "Fn::GetAtt": [
+            "notifyalexalambdaFE0F0672",
+            "Arn"
+          ]
+        },
+        "Principal": "sns.amazonaws.com",
+        "SourceArn": {
+          "Ref": "alexasnstopicF1B1EABB"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "CDK-Deploy-Pipeline-Stack/Alexa-Notifications/notify_alexa_lambda/AllowInvoke:CDKDeployPipelineStackAlexaNotificationsalexasnstopic0B261C18"
+      }
+    },
+    "notifyalexalambdaalexasnstopic2A82F789": {
+      "Type": "AWS::SNS::Subscription",
+      "Properties": {
+        "Protocol": "lambda",
+        "TopicArn": {
+          "Ref": "alexasnstopicF1B1EABB"
+        },
+        "Endpoint": {
+          "Fn::GetAtt": [
+            "notifyalexalambdaFE0F0672",
+            "Arn"
+          ]
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "CDK-Deploy-Pipeline-Stack/Alexa-Notifications/notify_alexa_lambda/alexa_sns_topic/Resource"
+      }
+    },
+    "CDKMetadata": {
+      "Type": "AWS::CDK::Metadata",
+      "Properties": {
+        "Analytics": "v2:deflate64:H4sIAAAAAAAA/02OSw7CMAxEz8I+NZ9uYMdHYl0VLhBcA6ZtUsWJEIpyd5pWSKzmzVgezRrW5QZWi71+S4FNu4xoHUG8eI2tOoiQH/HB5qFO1oh3Ab063U1NYoNDSio/RjEC8WoHxnyc4RJugo4Hz9bk9N8nxbqHWNuOprasle0YP9nOlFSn+1ujIZ6DwV/LP1fkehaZ+qQsdF4rMI0ePRwDtuSPWiglVX3805plCVvYLV7CXLhgPPcE9axfUDC/NwoBAAA="
+      },
+      "Metadata": {
+        "aws:cdk:path": "CDK-Deploy-Pipeline-Stack/Alexa-Notifications/CDKMetadata/Default"
+      }
+    }
+  },
+  "Parameters": {
+    "BootstrapVersion": {
+      "Type": "AWS::SSM::Parameter::Value<String>",
+      "Default": "/cdk-bootstrap/hnb659fds/version",
+      "Description": "Version of the CDK Bootstrap resources in this environment, automatically retrieved from SSM Parameter Store. [cdk:skip]"
+    }
+  },
+  "Rules": {
+    "CheckBootstrapVersion": {
+      "Assertions": [
+        {
+          "Assert": {
+            "Fn::Not": [
+              {
+                "Fn::Contains": [
+                  [
+                    "1",
+                    "2",
+                    "3",
+                    "4",
+                    "5"
+                  ],
+                  {
+                    "Ref": "BootstrapVersion"
+                  }
+                ]
+              }
+            ]
+          },
+          "AssertDescription": "CDK bootstrap stack version 6 required. Please run 'cdk bootstrap' with a recent version of the CDK CLI."
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,780 @@
+{
+  "Parameters": {
+    "SsmParameterValuealexacdkblogalexadevelopervendoridC96584B6F00A464EAD1953AFF4B05118Parameter": {
+      "Type": "AWS::SSM::Parameter::Value<String>",
+      "Default": "/alexa-cdk-blog/alexa-developer-vendor-id"
+    },
+    "SsmParameterValuealexacdkbloglwaclientidC96584B6F00A464EAD1953AFF4B05118Parameter": {
+      "Type": "AWS::SSM::Parameter::Value<String>",
+      "Default": "/alexa-cdk-blog/lwa-client-id"
+    },
+    "BootstrapVersion": {
+      "Type": "AWS::SSM::Parameter::Value<String>",
+      "Default": "/cdk-bootstrap/hnb659fds/version",
+      "Description": "Version of the CDK Bootstrap resources in this environment, automatically retrieved from SSM Parameter Store. [cdk:skip]"
+    }
+  },
+  "Resources": {
+    "skillbackendServiceRole362BC07B": {
+      "Type": "AWS::IAM::Role",
+      "Properties": {
+        "AssumeRolePolicyDocument": {
+          "Statement": [
+            {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "lambda.amazonaws.com"
+              }
+            }
+          ],
+          "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+          {
+            "Fn::Join": [
+              "",
+              [
+                "arn:",
+                {
+                  "Ref": "AWS::Partition"
+                },
+                ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+              ]
+            ]
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "CDK-Deploy-Pipeline/Deploy-Dev/Plant-Status-Stack/skill_backend/ServiceRole/Resource"
+      }
+    },
+    "skillbackend88AA4969": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "Code": {
+          "S3Bucket": "cdk-hnb659fds-assets-872203653859-ap-southeast-2",
+          "S3Key": "547b10cb0dfd0e5cdaa1a5d3ba0111c03b5f09aca7ab0a0e4de5601c5b51abfc.zip"
+        },
+        "Role": {
+          "Fn::GetAtt": [
+            "skillbackendServiceRole362BC07B",
+            "Arn"
+          ]
+        },
+        "Handler": "index.handler",
+        "Runtime": "python3.7",
+        "Timeout": 10
+      },
+      "DependsOn": [
+        "skillbackendServiceRole362BC07B"
+      ],
+      "Metadata": {
+        "aws:cdk:path": "CDK-Deploy-Pipeline/Deploy-Dev/Plant-Status-Stack/skill_backend/Resource",
+        "aws:asset:path": "../asset.547b10cb0dfd0e5cdaa1a5d3ba0111c03b5f09aca7ab0a0e4de5601c5b51abfc",
+        "aws:asset:property": "Code"
+      }
+    },
+    "alexaskillAskResourceRole4E5E07AB": {
+      "Type": "AWS::IAM::Role",
+      "Properties": {
+        "AssumeRolePolicyDocument": {
+          "Statement": [
+            {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "alexa-appkit.amazon.com"
+              }
+            }
+          ],
+          "Version": "2012-10-17"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "CDK-Deploy-Pipeline/Deploy-Dev/Plant-Status-Stack/alexa_skill/AskResourceRole/Resource"
+      }
+    },
+    "alexaskillAskResourceRoleDefaultPolicyB63CDC91": {
+      "Type": "AWS::IAM::Policy",
+      "Properties": {
+        "PolicyDocument": {
+          "Statement": [
+            {
+              "Action": [
+                "s3:GetObject*",
+                "s3:GetBucket*",
+                "s3:List*"
+              ],
+              "Effect": "Allow",
+              "Resource": [
+                {
+                  "Fn::Join": [
+                    "",
+                    [
+                      "arn:",
+                      {
+                        "Ref": "AWS::Partition"
+                      },
+                      ":s3:::cdk-hnb659fds-assets-872203653859-ap-southeast-2"
+                    ]
+                  ]
+                },
+                {
+                  "Fn::Join": [
+                    "",
+                    [
+                      "arn:",
+                      {
+                        "Ref": "AWS::Partition"
+                      },
+                      ":s3:::cdk-hnb659fds-assets-872203653859-ap-southeast-2/*"
+                    ]
+                  ]
+                }
+              ]
+            }
+          ],
+          "Version": "2012-10-17"
+        },
+        "PolicyName": "alexaskillAskResourceRoleDefaultPolicyB63CDC91",
+        "Roles": [
+          {
+            "Ref": "alexaskillAskResourceRole4E5E07AB"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "CDK-Deploy-Pipeline/Deploy-Dev/Plant-Status-Stack/alexa_skill/AskResourceRole/DefaultPolicy/Resource"
+      }
+    },
+    "alexaskill5DFAEEBF": {
+      "Type": "Alexa::ASK::Skill",
+      "Properties": {
+        "AuthenticationConfiguration": {
+          "ClientId": {
+            "Ref": "SsmParameterValuealexacdkbloglwaclientidC96584B6F00A464EAD1953AFF4B05118Parameter"
+          },
+          "ClientSecret": "{{resolve:secretsmanager:/alexa-cdk-blog/lwa-client-secret:SecretString:::}}",
+          "RefreshToken": "{{resolve:secretsmanager:/alexa-cdk-blog/lwa-refresh-token:SecretString:::}}"
+        },
+        "SkillPackage": {
+          "Overrides": {
+            "Manifest": {
+              "apis": {
+                "custom": {
+                  "endpoint": {
+                    "uri": {
+                      "Fn::GetAtt": [
+                        "skillbackend88AA4969",
+                        "Arn"
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "S3Bucket": "cdk-hnb659fds-assets-872203653859-ap-southeast-2",
+          "S3BucketRole": {
+            "Fn::GetAtt": [
+              "alexaskillAskResourceRole4E5E07AB",
+              "Arn"
+            ]
+          },
+          "S3Key": "e9f9734713502fdd94d3148c60baaeb904ae5ab28601577bfb41eb86ea908ea3.zip"
+        },
+        "VendorId": {
+          "Ref": "SsmParameterValuealexacdkblogalexadevelopervendoridC96584B6F00A464EAD1953AFF4B05118Parameter"
+        }
+      },
+      "DependsOn": [
+        "alexaskillInitialLambdaPermission8A1C5A19"
+      ],
+      "Metadata": {
+        "aws:cdk:path": "CDK-Deploy-Pipeline/Deploy-Dev/Plant-Status-Stack/alexa_skill/Resource"
+      }
+    },
+    "alexaskillInitialLambdaPermission8A1C5A19": {
+      "Type": "AWS::Lambda::Permission",
+      "Properties": {
+        "Action": "lambda:InvokeFunction",
+        "FunctionName": {
+          "Fn::GetAtt": [
+            "skillbackend88AA4969",
+            "Arn"
+          ]
+        },
+        "Principal": "alexa-appkit.amazon.com"
+      },
+      "Metadata": {
+        "aws:cdk:path": "CDK-Deploy-Pipeline/Deploy-Dev/Plant-Status-Stack/alexa_skill/InitialLambdaPermission"
+      }
+    },
+    "alexaskillGetLambdaPermissionStatementIdFunctionServiceRoleCFA487CE": {
+      "Type": "AWS::IAM::Role",
+      "Properties": {
+        "AssumeRolePolicyDocument": {
+          "Statement": [
+            {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "lambda.amazonaws.com"
+              }
+            }
+          ],
+          "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+          {
+            "Fn::Join": [
+              "",
+              [
+                "arn:",
+                {
+                  "Ref": "AWS::Partition"
+                },
+                ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+              ]
+            ]
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "CDK-Deploy-Pipeline/Deploy-Dev/Plant-Status-Stack/alexa_skill/GetLambdaPermissionStatementIdFunction/ServiceRole/Resource"
+      }
+    },
+    "alexaskillGetLambdaPermissionStatementIdFunctionServiceRoleDefaultPolicyB19DF693": {
+      "Type": "AWS::IAM::Policy",
+      "Properties": {
+        "PolicyDocument": {
+          "Statement": [
+            {
+              "Action": "lambda:GetPolicy",
+              "Effect": "Allow",
+              "Resource": {
+                "Fn::GetAtt": [
+                  "skillbackend88AA4969",
+                  "Arn"
+                ]
+              }
+            }
+          ],
+          "Version": "2012-10-17"
+        },
+        "PolicyName": "alexaskillGetLambdaPermissionStatementIdFunctionServiceRoleDefaultPolicyB19DF693",
+        "Roles": [
+          {
+            "Ref": "alexaskillGetLambdaPermissionStatementIdFunctionServiceRoleCFA487CE"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "CDK-Deploy-Pipeline/Deploy-Dev/Plant-Status-Stack/alexa_skill/GetLambdaPermissionStatementIdFunction/ServiceRole/DefaultPolicy/Resource"
+      }
+    },
+    "alexaskillGetLambdaPermissionStatementIdFunctionB0F9FB0F": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "Code": {
+          "S3Bucket": "cdk-hnb659fds-assets-872203653859-ap-southeast-2",
+          "S3Key": "088160dd688bb8706116632b65f09d03154f74fc42fc99c5c0af4a494e96f64e.zip"
+        },
+        "Role": {
+          "Fn::GetAtt": [
+            "alexaskillGetLambdaPermissionStatementIdFunctionServiceRoleCFA487CE",
+            "Arn"
+          ]
+        },
+        "Handler": "index.lambda_handler",
+        "Runtime": "python3.8"
+      },
+      "DependsOn": [
+        "alexaskillGetLambdaPermissionStatementIdFunctionServiceRoleDefaultPolicyB19DF693",
+        "alexaskillGetLambdaPermissionStatementIdFunctionServiceRoleCFA487CE"
+      ],
+      "Metadata": {
+        "aws:cdk:path": "CDK-Deploy-Pipeline/Deploy-Dev/Plant-Status-Stack/alexa_skill/GetLambdaPermissionStatementIdFunction/Resource",
+        "aws:asset:path": "../asset.088160dd688bb8706116632b65f09d03154f74fc42fc99c5c0af4a494e96f64e",
+        "aws:asset:property": "Code"
+      }
+    },
+    "alexaskillProviderframeworkonEventServiceRole6BFA3302": {
+      "Type": "AWS::IAM::Role",
+      "Properties": {
+        "AssumeRolePolicyDocument": {
+          "Statement": [
+            {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "lambda.amazonaws.com"
+              }
+            }
+          ],
+          "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+          {
+            "Fn::Join": [
+              "",
+              [
+                "arn:",
+                {
+                  "Ref": "AWS::Partition"
+                },
+                ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+              ]
+            ]
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "CDK-Deploy-Pipeline/Deploy-Dev/Plant-Status-Stack/alexa_skill/Provider/framework-onEvent/ServiceRole/Resource"
+      }
+    },
+    "alexaskillProviderframeworkonEventServiceRoleDefaultPolicyAD7D1DB1": {
+      "Type": "AWS::IAM::Policy",
+      "Properties": {
+        "PolicyDocument": {
+          "Statement": [
+            {
+              "Action": "lambda:InvokeFunction",
+              "Effect": "Allow",
+              "Resource": {
+                "Fn::GetAtt": [
+                  "alexaskillGetLambdaPermissionStatementIdFunctionB0F9FB0F",
+                  "Arn"
+                ]
+              }
+            }
+          ],
+          "Version": "2012-10-17"
+        },
+        "PolicyName": "alexaskillProviderframeworkonEventServiceRoleDefaultPolicyAD7D1DB1",
+        "Roles": [
+          {
+            "Ref": "alexaskillProviderframeworkonEventServiceRole6BFA3302"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "CDK-Deploy-Pipeline/Deploy-Dev/Plant-Status-Stack/alexa_skill/Provider/framework-onEvent/ServiceRole/DefaultPolicy/Resource"
+      }
+    },
+    "alexaskillProviderframeworkonEvent88B9CCE4": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "Code": {
+          "S3Bucket": "cdk-hnb659fds-assets-872203653859-ap-southeast-2",
+          "S3Key": "c691172cdeefa2c91b5a2907f9d81118e47597634943344795f1a844192dd49c.zip"
+        },
+        "Role": {
+          "Fn::GetAtt": [
+            "alexaskillProviderframeworkonEventServiceRole6BFA3302",
+            "Arn"
+          ]
+        },
+        "Description": "AWS CDK resource provider framework - onEvent (CDK-Deploy-Pipeline/Deploy-Dev/Plant-Status-Stack/alexa_skill/Provider)",
+        "Environment": {
+          "Variables": {
+            "USER_ON_EVENT_FUNCTION_ARN": {
+              "Fn::GetAtt": [
+                "alexaskillGetLambdaPermissionStatementIdFunctionB0F9FB0F",
+                "Arn"
+              ]
+            }
+          }
+        },
+        "Handler": "framework.onEvent",
+        "Runtime": "nodejs12.x",
+        "Timeout": 900
+      },
+      "DependsOn": [
+        "alexaskillProviderframeworkonEventServiceRoleDefaultPolicyAD7D1DB1",
+        "alexaskillProviderframeworkonEventServiceRole6BFA3302"
+      ],
+      "Metadata": {
+        "aws:cdk:path": "CDK-Deploy-Pipeline/Deploy-Dev/Plant-Status-Stack/alexa_skill/Provider/framework-onEvent/Resource",
+        "aws:asset:path": "../asset.c691172cdeefa2c91b5a2907f9d81118e47597634943344795f1a844192dd49c",
+        "aws:asset:property": "Code"
+      }
+    },
+    "alexaskillGetLambdaPermissionStatementIdCustomResource6CF7A2B6": {
+      "Type": "AWS::CloudFormation::CustomResource",
+      "Properties": {
+        "ServiceToken": {
+          "Fn::GetAtt": [
+            "alexaskillProviderframeworkonEvent88B9CCE4",
+            "Arn"
+          ]
+        },
+        "lambda_function_arn": {
+          "Fn::GetAtt": [
+            "skillbackend88AA4969",
+            "Arn"
+          ]
+        },
+        "service_principal_to_match": "alexa-appkit.amazon.com",
+        "action_to_match": "lambda:InvokeFunction"
+      },
+      "DependsOn": [
+        "alexaskillInitialLambdaPermission8A1C5A19"
+      ],
+      "UpdateReplacePolicy": "Delete",
+      "DeletionPolicy": "Delete",
+      "Metadata": {
+        "aws:cdk:path": "CDK-Deploy-Pipeline/Deploy-Dev/Plant-Status-Stack/alexa_skill/GetLambdaPermissionStatementIdCustomResource/Default"
+      }
+    },
+    "alexaskillRemovePermissionCustomResourceCustomResourcePolicyE59DBB3C": {
+      "Type": "AWS::IAM::Policy",
+      "Properties": {
+        "PolicyDocument": {
+          "Statement": [
+            {
+              "Action": [
+                "lambda:RemovePermission",
+                "lambda:AddPermission"
+              ],
+              "Effect": "Allow",
+              "Resource": {
+                "Fn::GetAtt": [
+                  "skillbackend88AA4969",
+                  "Arn"
+                ]
+              }
+            }
+          ],
+          "Version": "2012-10-17"
+        },
+        "PolicyName": "alexaskillRemovePermissionCustomResourceCustomResourcePolicyE59DBB3C",
+        "Roles": [
+          {
+            "Ref": "AWS679f53fac002430cb0da5b7982bd2287ServiceRoleC1EA0FF2"
+          }
+        ]
+      },
+      "DependsOn": [
+        "alexaskill5DFAEEBF"
+      ],
+      "Metadata": {
+        "aws:cdk:path": "CDK-Deploy-Pipeline/Deploy-Dev/Plant-Status-Stack/alexa_skill/RemovePermissionCustomResource/CustomResourcePolicy/Resource"
+      }
+    },
+    "alexaskillRemovePermissionCustomResourceA13E5A3D": {
+      "Type": "Custom::AWS",
+      "Properties": {
+        "ServiceToken": {
+          "Fn::GetAtt": [
+            "AWS679f53fac002430cb0da5b7982bd22872D164C4C",
+            "Arn"
+          ]
+        },
+        "Create": {
+          "Fn::Join": [
+            "",
+            [
+              "{\"service\":\"Lambda\",\"action\":\"removePermission\",\"parameters\":{\"FunctionName\":\"",
+              {
+                "Fn::GetAtt": [
+                  "skillbackend88AA4969",
+                  "Arn"
+                ]
+              },
+              "\",\"StatementId\":\"",
+              {
+                "Fn::GetAtt": [
+                  "alexaskillGetLambdaPermissionStatementIdCustomResource6CF7A2B6",
+                  "statement_id"
+                ]
+              },
+              "\"},\"ignoreErrorCodesMatching\":\"ResourceNotFoundException\",\"physicalResourceId\":{\"id\":\"RemovePermission-",
+              {
+                "Ref": "alexaskill5DFAEEBF"
+              },
+              "\"}}"
+            ]
+          ]
+        },
+        "Update": {
+          "Fn::Join": [
+            "",
+            [
+              "{\"service\":\"Lambda\",\"action\":\"removePermission\",\"parameters\":{\"FunctionName\":\"",
+              {
+                "Fn::GetAtt": [
+                  "skillbackend88AA4969",
+                  "Arn"
+                ]
+              },
+              "\",\"StatementId\":\"",
+              {
+                "Fn::GetAtt": [
+                  "alexaskillGetLambdaPermissionStatementIdCustomResource6CF7A2B6",
+                  "statement_id"
+                ]
+              },
+              "\"},\"ignoreErrorCodesMatching\":\"ResourceNotFoundException\",\"physicalResourceId\":{\"id\":\"RemovePermission-",
+              {
+                "Ref": "alexaskill5DFAEEBF"
+              },
+              "\"}}"
+            ]
+          ]
+        },
+        "Delete": {
+          "Fn::Join": [
+            "",
+            [
+              "{\"service\":\"Lambda\",\"action\":\"removePermission\",\"parameters\":{\"FunctionName\":\"",
+              {
+                "Fn::GetAtt": [
+                  "skillbackend88AA4969",
+                  "Arn"
+                ]
+              },
+              "\",\"StatementId\":\"",
+              {
+                "Fn::GetAtt": [
+                  "alexaskillGetLambdaPermissionStatementIdCustomResource6CF7A2B6",
+                  "statement_id"
+                ]
+              },
+              "\"},\"ignoreErrorCodesMatching\":\"ResourceNotFoundException\",\"physicalResourceId\":{\"id\":\"RemovePermission-",
+              {
+                "Ref": "alexaskill5DFAEEBF"
+              },
+              "\"}}"
+            ]
+          ]
+        },
+        "InstallLatestAwsSdk": true
+      },
+      "DependsOn": [
+        "alexaskillRemovePermissionCustomResourceCustomResourcePolicyE59DBB3C",
+        "alexaskill5DFAEEBF"
+      ],
+      "UpdateReplacePolicy": "Delete",
+      "DeletionPolicy": "Delete",
+      "Metadata": {
+        "aws:cdk:path": "CDK-Deploy-Pipeline/Deploy-Dev/Plant-Status-Stack/alexa_skill/RemovePermissionCustomResource/Resource/Default"
+      }
+    },
+    "alexaskillAddPermissionCustomResourceCustomResourcePolicy686C9162": {
+      "Type": "AWS::IAM::Policy",
+      "Properties": {
+        "PolicyDocument": {
+          "Statement": [
+            {
+              "Action": [
+                "lambda:RemovePermission",
+                "lambda:AddPermission"
+              ],
+              "Effect": "Allow",
+              "Resource": {
+                "Fn::GetAtt": [
+                  "skillbackend88AA4969",
+                  "Arn"
+                ]
+              }
+            }
+          ],
+          "Version": "2012-10-17"
+        },
+        "PolicyName": "alexaskillAddPermissionCustomResourceCustomResourcePolicy686C9162",
+        "Roles": [
+          {
+            "Ref": "AWS679f53fac002430cb0da5b7982bd2287ServiceRoleC1EA0FF2"
+          }
+        ]
+      },
+      "DependsOn": [
+        "alexaskillRemovePermissionCustomResourceCustomResourcePolicyE59DBB3C",
+        "alexaskillRemovePermissionCustomResourceA13E5A3D"
+      ],
+      "Metadata": {
+        "aws:cdk:path": "CDK-Deploy-Pipeline/Deploy-Dev/Plant-Status-Stack/alexa_skill/AddPermissionCustomResource/CustomResourcePolicy/Resource"
+      }
+    },
+    "alexaskillAddPermissionCustomResourceF24F9427": {
+      "Type": "Custom::AWS",
+      "Properties": {
+        "ServiceToken": {
+          "Fn::GetAtt": [
+            "AWS679f53fac002430cb0da5b7982bd22872D164C4C",
+            "Arn"
+          ]
+        },
+        "Create": {
+          "Fn::Join": [
+            "",
+            [
+              "{\"service\":\"Lambda\",\"action\":\"addPermission\",\"parameters\":{\"FunctionName\":\"",
+              {
+                "Fn::GetAtt": [
+                  "skillbackend88AA4969",
+                  "Arn"
+                ]
+              },
+              "\",\"StatementId\":\"",
+              {
+                "Fn::GetAtt": [
+                  "alexaskillGetLambdaPermissionStatementIdCustomResource6CF7A2B6",
+                  "statement_id"
+                ]
+              },
+              "\",\"Principal\":\"alexa-appkit.amazon.com\",\"Action\":\"lambda:InvokeFunction\",\"EventSourceToken\":\"",
+              {
+                "Ref": "alexaskill5DFAEEBF"
+              },
+              "\"},\"physicalResourceId\":{\"id\":\"AddPermission-",
+              {
+                "Ref": "alexaskill5DFAEEBF"
+              },
+              "\"}}"
+            ]
+          ]
+        },
+        "Update": {
+          "Fn::Join": [
+            "",
+            [
+              "{\"service\":\"Lambda\",\"action\":\"addPermission\",\"parameters\":{\"FunctionName\":\"",
+              {
+                "Fn::GetAtt": [
+                  "skillbackend88AA4969",
+                  "Arn"
+                ]
+              },
+              "\",\"StatementId\":\"",
+              {
+                "Fn::GetAtt": [
+                  "alexaskillGetLambdaPermissionStatementIdCustomResource6CF7A2B6",
+                  "statement_id"
+                ]
+              },
+              "\",\"Principal\":\"alexa-appkit.amazon.com\",\"Action\":\"lambda:InvokeFunction\",\"EventSourceToken\":\"",
+              {
+                "Ref": "alexaskill5DFAEEBF"
+              },
+              "\"},\"physicalResourceId\":{\"id\":\"AddPermission-",
+              {
+                "Ref": "alexaskill5DFAEEBF"
+              },
+              "\"}}"
+            ]
+          ]
+        },
+        "InstallLatestAwsSdk": true
+      },
+      "DependsOn": [
+        "alexaskillAddPermissionCustomResourceCustomResourcePolicy686C9162",
+        "alexaskillRemovePermissionCustomResourceCustomResourcePolicyE59DBB3C",
+        "alexaskillRemovePermissionCustomResourceA13E5A3D"
+      ],
+      "UpdateReplacePolicy": "Delete",
+      "DeletionPolicy": "Delete",
+      "Metadata": {
+        "aws:cdk:path": "CDK-Deploy-Pipeline/Deploy-Dev/Plant-Status-Stack/alexa_skill/AddPermissionCustomResource/Resource/Default"
+      }
+    },
+    "AWS679f53fac002430cb0da5b7982bd2287ServiceRoleC1EA0FF2": {
+      "Type": "AWS::IAM::Role",
+      "Properties": {
+        "AssumeRolePolicyDocument": {
+          "Statement": [
+            {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "lambda.amazonaws.com"
+              }
+            }
+          ],
+          "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+          {
+            "Fn::Join": [
+              "",
+              [
+                "arn:",
+                {
+                  "Ref": "AWS::Partition"
+                },
+                ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+              ]
+            ]
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "CDK-Deploy-Pipeline/Deploy-Dev/Plant-Status-Stack/AWS679f53fac002430cb0da5b7982bd2287/ServiceRole/Resource"
+      }
+    },
+    "AWS679f53fac002430cb0da5b7982bd22872D164C4C": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "Code": {
+          "S3Bucket": "cdk-hnb659fds-assets-872203653859-ap-southeast-2",
+          "S3Key": "11d371859e49f3b1a49896583254890801a40beada56e4c84409a179a221e2e2.zip"
+        },
+        "Role": {
+          "Fn::GetAtt": [
+            "AWS679f53fac002430cb0da5b7982bd2287ServiceRoleC1EA0FF2",
+            "Arn"
+          ]
+        },
+        "Handler": "index.handler",
+        "Runtime": "nodejs12.x",
+        "Timeout": 120
+      },
+      "DependsOn": [
+        "AWS679f53fac002430cb0da5b7982bd2287ServiceRoleC1EA0FF2"
+      ],
+      "Metadata": {
+        "aws:cdk:path": "CDK-Deploy-Pipeline/Deploy-Dev/Plant-Status-Stack/AWS679f53fac002430cb0da5b7982bd2287/Resource",
+        "aws:asset:path": "../asset.11d371859e49f3b1a49896583254890801a40beada56e4c84409a179a221e2e2",
+        "aws:asset:property": "Code"
+      }
+    },
+    "CDKMetadata": {
+      "Type": "AWS::CDK::Metadata",
+      "Properties": {
+        "Analytics": "v2:deflate64:H4sIAAAAAAAA/1VQy1LDMAz8lt4VlZAL3Gg703Mm+QLjiGLiB2PJlI4n/46TQIDTSp5d7a5rzHVzj3e7J3XlSg/jPusQCXMvSo9wevGtisqRUISOOKSoCQ7MJIVwMf4Cp+BZYtICp8QS3MYq2p95gvl6tso9D6p6v8lr8NgucE5eiwkejHKYu2BX4YxtsEbflgzLNAE3lZq9GZcIZcdj0iPJUTHBeh5zEWxXZzFFZ5jnbXvuS3JL8ms/TaCX+FX8zsyY2xg+zFCaH678v1yh103z99uUpU9V0o1YLPvRWDvB2nDf4AM+7t7YmComL8YRdit+AV+cWaZ+AQAA"
+      },
+      "Metadata": {
+        "aws:cdk:path": "CDK-Deploy-Pipeline/Deploy-Dev/Plant-Status-Stack/CDKMetadata/Default"
+      }
+    }
+  },
+  "Rules": {
+    "CheckBootstrapVersion": {
+      "Assertions": [
+        {
+          "Assert": {
+            "Fn::Not": [
+              {
+                "Fn::Contains": [
+                  [
+                    "1",
+                    "2",
+                    "3",
+                    "4",
+                    "5"
+                  ],
+                  {
+                    "Ref": "BootstrapVersion"
+                  }
+                ]
+              }
+            ]
+          },
+          "AssertDescription": "CDK bootstrap stack version 6 required. Please run 'cdk bootstrap' with a recent version of the CDK CLI."
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "version": "14.0.0",
+  "files": {
+    "11cfc3654a494895e2a8a5c85af1b28e069c548c7581a7e3c06514c8a1eb04fd": {
+      "source": {
+        "path": "CDKDeployPipelineDeployDevS3Stack4DE15985.template.json",
+        "packaging": "file"
+      },
+      "destinations": {
+        "523431903420-ap-southeast-2": {
+          "bucketName": "cdk-hnb659fds-assets-523431903420-ap-southeast-2",
+          "objectKey": "11cfc3654a494895e2a8a5c85af1b28e069c548c7581a7e3c06514c8a1eb04fd.json",
+          "region": "ap-southeast-2",
+          "assumeRoleArn": "arn:${AWS::Partition}:iam::523431903420:role/cdk-hnb659fds-file-publishing-role-523431903420-ap-southeast-2"
+        }
+      }
+    }
+  },
+  "dockerImages": {}
+}

@@ -1,0 +1,48 @@
+{
+  "version": "14.0.0",
+  "files": {
+    "c63ad6958ff6e4551e70bae7418f7d76189ae435afa72b5268474b8f76d49ba0": {
+      "source": {
+        "path": "../asset.c63ad6958ff6e4551e70bae7418f7d76189ae435afa72b5268474b8f76d49ba0",
+        "packaging": "zip"
+      },
+      "destinations": {
+        "523431903420-ap-southeast-2": {
+          "bucketName": "cdk-hnb659fds-assets-523431903420-ap-southeast-2",
+          "objectKey": "c63ad6958ff6e4551e70bae7418f7d76189ae435afa72b5268474b8f76d49ba0.zip",
+          "region": "ap-southeast-2",
+          "assumeRoleArn": "arn:${AWS::Partition}:iam::523431903420:role/cdk-hnb659fds-file-publishing-role-523431903420-ap-southeast-2"
+        }
+      }
+    },
+    "e2d9f4c587faa240510bb9cd1c0afe3112663d6336529432a852f5e452cf6456": {
+      "source": {
+        "path": "../asset.e2d9f4c587faa240510bb9cd1c0afe3112663d6336529432a852f5e452cf6456",
+        "packaging": "zip"
+      },
+      "destinations": {
+        "523431903420-ap-southeast-2": {
+          "bucketName": "cdk-hnb659fds-assets-523431903420-ap-southeast-2",
+          "objectKey": "e2d9f4c587faa240510bb9cd1c0afe3112663d6336529432a852f5e452cf6456.zip",
+          "region": "ap-southeast-2",
+          "assumeRoleArn": "arn:${AWS::Partition}:iam::523431903420:role/cdk-hnb659fds-file-publishing-role-523431903420-ap-southeast-2"
+        }
+      }
+    },
+    "aab2f401480596b2d332304de405465194d6fb40ef1762c6389bc265b1b77b29": {
+      "source": {
+        "path": "CDKDeployPipelineDeployProdCdkWorkshopStack2913C8C0.template.json",
+        "packaging": "file"
+      },
+      "destinations": {
+        "523431903420-ap-southeast-2": {
+          "bucketName": "cdk-hnb659fds-assets-523431903420-ap-southeast-2",
+          "objectKey": "aab2f401480596b2d332304de405465194d6fb40ef1762c6389bc265b1b77b29.json",
+          "region": "ap-southeast-2",
+          "assumeRoleArn": "arn:${AWS::Partition}:iam::523431903420:role/cdk-hnb659fds-file-publishing-role-523431903420-ap-southeast-2"
+        }
+      }
+    }
+  },
+  "dockerImages": {}
+}

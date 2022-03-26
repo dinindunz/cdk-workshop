@@ -1,0 +1,90 @@
+{
+  "version": "14.0.0",
+  "files": {
+    "547b10cb0dfd0e5cdaa1a5d3ba0111c03b5f09aca7ab0a0e4de5601c5b51abfc": {
+      "source": {
+        "path": "../asset.547b10cb0dfd0e5cdaa1a5d3ba0111c03b5f09aca7ab0a0e4de5601c5b51abfc",
+        "packaging": "zip"
+      },
+      "destinations": {
+        "872203653859-ap-southeast-2": {
+          "bucketName": "cdk-hnb659fds-assets-872203653859-ap-southeast-2",
+          "objectKey": "547b10cb0dfd0e5cdaa1a5d3ba0111c03b5f09aca7ab0a0e4de5601c5b51abfc.zip",
+          "region": "ap-southeast-2",
+          "assumeRoleArn": "arn:${AWS::Partition}:iam::872203653859:role/cdk-hnb659fds-file-publishing-role-872203653859-ap-southeast-2"
+        }
+      }
+    },
+    "e9f9734713502fdd94d3148c60baaeb904ae5ab28601577bfb41eb86ea908ea3": {
+      "source": {
+        "path": "../asset.e9f9734713502fdd94d3148c60baaeb904ae5ab28601577bfb41eb86ea908ea3",
+        "packaging": "zip"
+      },
+      "destinations": {
+        "872203653859-ap-southeast-2": {
+          "bucketName": "cdk-hnb659fds-assets-872203653859-ap-southeast-2",
+          "objectKey": "e9f9734713502fdd94d3148c60baaeb904ae5ab28601577bfb41eb86ea908ea3.zip",
+          "region": "ap-southeast-2",
+          "assumeRoleArn": "arn:${AWS::Partition}:iam::872203653859:role/cdk-hnb659fds-file-publishing-role-872203653859-ap-southeast-2"
+        }
+      }
+    },
+    "088160dd688bb8706116632b65f09d03154f74fc42fc99c5c0af4a494e96f64e": {
+      "source": {
+        "path": "../asset.088160dd688bb8706116632b65f09d03154f74fc42fc99c5c0af4a494e96f64e",
+        "packaging": "zip"
+      },
+      "destinations": {
+        "872203653859-ap-southeast-2": {
+          "bucketName": "cdk-hnb659fds-assets-872203653859-ap-southeast-2",
+          "objectKey": "088160dd688bb8706116632b65f09d03154f74fc42fc99c5c0af4a494e96f64e.zip",
+          "region": "ap-southeast-2",
+          "assumeRoleArn": "arn:${AWS::Partition}:iam::872203653859:role/cdk-hnb659fds-file-publishing-role-872203653859-ap-southeast-2"
+        }
+      }
+    },
+    "c691172cdeefa2c91b5a2907f9d81118e47597634943344795f1a844192dd49c": {
+      "source": {
+        "path": "../asset.c691172cdeefa2c91b5a2907f9d81118e47597634943344795f1a844192dd49c",
+        "packaging": "zip"
+      },
+      "destinations": {
+        "872203653859-ap-southeast-2": {
+          "bucketName": "cdk-hnb659fds-assets-872203653859-ap-southeast-2",
+          "objectKey": "c691172cdeefa2c91b5a2907f9d81118e47597634943344795f1a844192dd49c.zip",
+          "region": "ap-southeast-2",
+          "assumeRoleArn": "arn:${AWS::Partition}:iam::872203653859:role/cdk-hnb659fds-file-publishing-role-872203653859-ap-southeast-2"
+        }
+      }
+    },
+    "11d371859e49f3b1a49896583254890801a40beada56e4c84409a179a221e2e2": {
+      "source": {
+        "path": "../asset.11d371859e49f3b1a49896583254890801a40beada56e4c84409a179a221e2e2",
+        "packaging": "zip"
+      },
+      "destinations": {
+        "872203653859-ap-southeast-2": {
+          "bucketName": "cdk-hnb659fds-assets-872203653859-ap-southeast-2",
+          "objectKey": "11d371859e49f3b1a49896583254890801a40beada56e4c84409a179a221e2e2.zip",
+          "region": "ap-southeast-2",
+          "assumeRoleArn": "arn:${AWS::Partition}:iam::872203653859:role/cdk-hnb659fds-file-publishing-role-872203653859-ap-southeast-2"
+        }
+      }
+    },
+    "5274a84fa9c3c9b7f25bef0b6190d35efaaaa8b1182d333f90af80b4a2a33d8d": {
+      "source": {
+        "path": "CDKDeployPipelineDeployDevPlantStatusStackCAD26CA1.template.json",
+        "packaging": "file"
+      },
+      "destinations": {
+        "872203653859-ap-southeast-2": {
+          "bucketName": "cdk-hnb659fds-assets-872203653859-ap-southeast-2",
+          "objectKey": "5274a84fa9c3c9b7f25bef0b6190d35efaaaa8b1182d333f90af80b4a2a33d8d.json",
+          "region": "ap-southeast-2",
+          "assumeRoleArn": "arn:${AWS::Partition}:iam::872203653859:role/cdk-hnb659fds-file-publishing-role-872203653859-ap-southeast-2"
+        }
+      }
+    }
+  },
+  "dockerImages": {}
+}

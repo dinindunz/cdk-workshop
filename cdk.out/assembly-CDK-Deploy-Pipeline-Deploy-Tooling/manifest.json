@@ -1,0 +1,532 @@
+{
+  "version": "14.0.0",
+  "artifacts": {
+    "CDKDeployPipelineDeployToolingPlantStatusStackCDAF9508.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "CDKDeployPipelineDeployToolingPlantStatusStackCDAF9508.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "CDKDeployPipelineDeployToolingPlantStatusStackCDAF9508": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://872203653859/ap-southeast-2",
+      "properties": {
+        "templateFile": "CDKDeployPipelineDeployToolingPlantStatusStackCDAF9508.template.json",
+        "validateOnSynth": true,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::872203653859:role/cdk-hnb659fds-deploy-role-872203653859-ap-southeast-2",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::872203653859:role/cdk-hnb659fds-cfn-exec-role-872203653859-ap-southeast-2",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-872203653859-ap-southeast-2/9d51475194385e3d0738df64f48a43ca63e3a0fa932f60228c85d0f14e384e18.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "CDKDeployPipelineDeployToolingPlantStatusStackCDAF9508.assets"
+        ],
+        "stackName": "Deploy-Tooling-Plant-Status-Stack"
+      },
+      "dependencies": [
+        "CDKDeployPipelineDeployToolingPlantStatusStackCDAF9508.assets"
+      ],
+      "metadata": {
+        "/CDK-Deploy-Pipeline/Deploy-Tooling/Plant-Status-Stack/SsmParameterValue:--alexa-cdk-blog--alexa-developer-vendor-id:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SsmParameterValuealexacdkblogalexadevelopervendoridC96584B6F00A464EAD1953AFF4B05118Parameter",
+            "trace": [
+              "Function.fromStringParameterAttributes (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/jsii-kernel-V9Jhy4/node_modules/@aws-cdk/aws-ssm/lib/parameter.js:146:15)",
+              "Function.valueForTypedStringParameter (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/jsii-kernel-V9Jhy4/node_modules/@aws-cdk/aws-ssm/lib/parameter.js:220:21)",
+              "Function.valueForStringParameter (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/jsii-kernel-V9Jhy4/node_modules/@aws-cdk/aws-ssm/lib/parameter.js:202:32)",
+              "/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:8269:114",
+              "Kernel._wrapSandboxCode (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:8860:24)",
+              "/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:8269:87",
+              "Kernel._ensureSync (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:8841:28)",
+              "Kernel.sinvoke (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:8269:34)",
+              "KernelHost.processRequest (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:9757:36)",
+              "KernelHost.run (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:9720:22)",
+              "Immediate._onImmediate (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:9721:46)",
+              "processImmediate (node:internal/timers:464:21)"
+            ]
+          }
+        ],
+        "/CDK-Deploy-Pipeline/Deploy-Tooling/Plant-Status-Stack/SsmParameterValue:--alexa-cdk-blog--lwa-client-id:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SsmParameterValuealexacdkbloglwaclientidC96584B6F00A464EAD1953AFF4B05118Parameter",
+            "trace": [
+              "Function.fromStringParameterAttributes (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/jsii-kernel-V9Jhy4/node_modules/@aws-cdk/aws-ssm/lib/parameter.js:146:15)",
+              "Function.valueForTypedStringParameter (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/jsii-kernel-V9Jhy4/node_modules/@aws-cdk/aws-ssm/lib/parameter.js:220:21)",
+              "Function.valueForStringParameter (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/jsii-kernel-V9Jhy4/node_modules/@aws-cdk/aws-ssm/lib/parameter.js:202:32)",
+              "/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:8269:114",
+              "Kernel._wrapSandboxCode (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:8860:24)",
+              "/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:8269:87",
+              "Kernel._ensureSync (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:8841:28)",
+              "Kernel.sinvoke (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:8269:34)",
+              "KernelHost.processRequest (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:9757:36)",
+              "KernelHost.run (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:9720:22)",
+              "Immediate._onImmediate (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:9721:46)",
+              "processImmediate (node:internal/timers:464:21)"
+            ]
+          }
+        ],
+        "/CDK-Deploy-Pipeline/Deploy-Tooling/Plant-Status-Stack/skill_backend/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "skillbackendServiceRole362BC07B",
+            "trace": [
+              "new Role (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/jsii-kernel-V9Jhy4/node_modules/@aws-cdk/aws-iam/lib/role.js:72:22)",
+              "new Function (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/jsii-kernel-V9Jhy4/node_modules/@aws-cdk/aws-lambda/lib/function.js:80:35)",
+              "new PythonFunction (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/jsii-kernel-V9Jhy4/node_modules/@aws-cdk/aws-lambda-python/lib/function.js:37:9)",
+              "/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:8432:58",
+              "Kernel._wrapSandboxCode (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:8860:24)",
+              "Kernel._create (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:8432:34)",
+              "Kernel.create (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:8173:29)",
+              "KernelHost.processRequest (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:9757:36)",
+              "KernelHost.run (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:9720:22)",
+              "Immediate._onImmediate (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:9721:46)",
+              "processImmediate (node:internal/timers:464:21)"
+            ]
+          }
+        ],
+        "/CDK-Deploy-Pipeline/Deploy-Tooling/Plant-Status-Stack/skill_backend/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "skillbackend88AA4969",
+            "trace": [
+              "new Function (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/jsii-kernel-V9Jhy4/node_modules/@aws-cdk/aws-lambda/lib/function.js:143:26)",
+              "new PythonFunction (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/jsii-kernel-V9Jhy4/node_modules/@aws-cdk/aws-lambda-python/lib/function.js:37:9)",
+              "/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:8432:58",
+              "Kernel._wrapSandboxCode (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:8860:24)",
+              "Kernel._create (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:8432:34)",
+              "Kernel.create (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:8173:29)",
+              "KernelHost.processRequest (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:9757:36)",
+              "KernelHost.run (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:9720:22)",
+              "Immediate._onImmediate (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:9721:46)",
+              "processImmediate (node:internal/timers:464:21)"
+            ]
+          }
+        ],
+        "/CDK-Deploy-Pipeline/Deploy-Tooling/Plant-Status-Stack/alexa_skill/AskResourceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "alexaskillAskResourceRole4E5E07AB",
+            "trace": [
+              "new Role (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/jsii-kernel-V9Jhy4/node_modules/@aws-cdk/aws-iam/lib/role.js:72:22)",
+              "new Skill (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/jsii-kernel-V9Jhy4/node_modules/cdk-alexa-skill/lib/skill.js:53:33)",
+              "/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:8432:58",
+              "Kernel._wrapSandboxCode (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:8860:24)",
+              "Kernel._create (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:8432:34)",
+              "Kernel.create (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:8173:29)",
+              "KernelHost.processRequest (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:9757:36)",
+              "KernelHost.run (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:9720:22)",
+              "Immediate._onImmediate (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:9721:46)",
+              "processImmediate (node:internal/timers:464:21)"
+            ]
+          }
+        ],
+        "/CDK-Deploy-Pipeline/Deploy-Tooling/Plant-Status-Stack/alexa_skill/AskResourceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "alexaskillAskResourceRoleDefaultPolicyB63CDC91",
+            "trace": [
+              "new Policy (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/jsii-kernel-V9Jhy4/node_modules/@aws-cdk/aws-iam/lib/policy.js:56:26)",
+              "Role.addToPrincipalPolicy (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/jsii-kernel-V9Jhy4/node_modules/@aws-cdk/aws-iam/lib/role.js:209:34)",
+              "Function.addToPrincipal (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/jsii-kernel-V9Jhy4/node_modules/@aws-cdk/aws-iam/lib/grant.js:90:65)",
+              "Function.addToPrincipalOrResource (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/jsii-kernel-V9Jhy4/node_modules/@aws-cdk/aws-iam/lib/grant.js:45:30)",
+              "Import.grant (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/jsii-kernel-V9Jhy4/node_modules/@aws-cdk/aws-s3/lib/bucket.js:442:31)",
+              "Import.grantRead (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/jsii-kernel-V9Jhy4/node_modules/@aws-cdk/aws-s3/lib/bucket.js:259:21)",
+              "Asset.grantRead (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/jsii-kernel-V9Jhy4/node_modules/@aws-cdk/aws-s3-assets/lib/asset.js:93:21)",
+              "new Asset (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/jsii-kernel-V9Jhy4/node_modules/@aws-cdk/aws-s3-assets/lib/asset.js:56:18)",
+              "new Skill (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/jsii-kernel-V9Jhy4/node_modules/cdk-alexa-skill/lib/skill.js:57:35)",
+              "/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:8432:58",
+              "Kernel._wrapSandboxCode (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:8860:24)",
+              "Kernel._create (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:8432:34)",
+              "Kernel.create (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:8173:29)",
+              "KernelHost.processRequest (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:9757:36)",
+              "KernelHost.run (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:9720:22)",
+              "Immediate._onImmediate (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:9721:46)",
+              "processImmediate (node:internal/timers:464:21)"
+            ]
+          }
+        ],
+        "/CDK-Deploy-Pipeline/Deploy-Tooling/Plant-Status-Stack/alexa_skill/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "alexaskill5DFAEEBF",
+            "trace": [
+              "new Skill (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/jsii-kernel-V9Jhy4/node_modules/cdk-alexa-skill/lib/skill.js:62:26)",
+              "/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:8432:58",
+              "Kernel._wrapSandboxCode (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:8860:24)",
+              "Kernel._create (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:8432:34)",
+              "Kernel.create (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:8173:29)",
+              "KernelHost.processRequest (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:9757:36)",
+              "KernelHost.run (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:9720:22)",
+              "Immediate._onImmediate (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:9721:46)",
+              "processImmediate (node:internal/timers:464:21)"
+            ]
+          }
+        ],
+        "/CDK-Deploy-Pipeline/Deploy-Tooling/Plant-Status-Stack/alexa_skill/InitialLambdaPermission": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "alexaskillInitialLambdaPermission8A1C5A19",
+            "trace": [
+              "new Skill (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/jsii-kernel-V9Jhy4/node_modules/cdk-alexa-skill/lib/skill.js:94:45)",
+              "/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:8432:58",
+              "Kernel._wrapSandboxCode (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:8860:24)",
+              "Kernel._create (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:8432:34)",
+              "Kernel.create (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:8173:29)",
+              "KernelHost.processRequest (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:9757:36)",
+              "KernelHost.run (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:9720:22)",
+              "Immediate._onImmediate (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:9721:46)",
+              "processImmediate (node:internal/timers:464:21)"
+            ]
+          }
+        ],
+        "/CDK-Deploy-Pipeline/Deploy-Tooling/Plant-Status-Stack/alexa_skill/GetLambdaPermissionStatementIdFunction/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "alexaskillGetLambdaPermissionStatementIdFunctionServiceRoleCFA487CE",
+            "trace": [
+              "new Role (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/jsii-kernel-V9Jhy4/node_modules/@aws-cdk/aws-iam/lib/role.js:72:22)",
+              "new Function (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/jsii-kernel-V9Jhy4/node_modules/@aws-cdk/aws-lambda/lib/function.js:80:35)",
+              "new Skill (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/jsii-kernel-V9Jhy4/node_modules/cdk-alexa-skill/lib/skill.js:102:54)",
+              "/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:8432:58",
+              "Kernel._wrapSandboxCode (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:8860:24)",
+              "Kernel._create (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:8432:34)",
+              "Kernel.create (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:8173:29)",
+              "KernelHost.processRequest (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:9757:36)",
+              "KernelHost.run (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:9720:22)",
+              "Immediate._onImmediate (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:9721:46)",
+              "processImmediate (node:internal/timers:464:21)"
+            ]
+          }
+        ],
+        "/CDK-Deploy-Pipeline/Deploy-Tooling/Plant-Status-Stack/alexa_skill/GetLambdaPermissionStatementIdFunction/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "alexaskillGetLambdaPermissionStatementIdFunctionServiceRoleDefaultPolicyB19DF693",
+            "trace": [
+              "new Policy (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/jsii-kernel-V9Jhy4/node_modules/@aws-cdk/aws-iam/lib/policy.js:56:26)",
+              "Role.addToPrincipalPolicy (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/jsii-kernel-V9Jhy4/node_modules/@aws-cdk/aws-iam/lib/role.js:209:34)",
+              "new Function (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/jsii-kernel-V9Jhy4/node_modules/@aws-cdk/aws-lambda/lib/function.js:96:23)",
+              "new Skill (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/jsii-kernel-V9Jhy4/node_modules/cdk-alexa-skill/lib/skill.js:102:54)",
+              "/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:8432:58",
+              "Kernel._wrapSandboxCode (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:8860:24)",
+              "Kernel._create (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:8432:34)",
+              "Kernel.create (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:8173:29)",
+              "KernelHost.processRequest (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:9757:36)",
+              "KernelHost.run (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:9720:22)",
+              "Immediate._onImmediate (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:9721:46)",
+              "processImmediate (node:internal/timers:464:21)"
+            ]
+          }
+        ],
+        "/CDK-Deploy-Pipeline/Deploy-Tooling/Plant-Status-Stack/alexa_skill/GetLambdaPermissionStatementIdFunction/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "alexaskillGetLambdaPermissionStatementIdFunctionB0F9FB0F",
+            "trace": [
+              "new Function (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/jsii-kernel-V9Jhy4/node_modules/@aws-cdk/aws-lambda/lib/function.js:143:26)",
+              "new Skill (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/jsii-kernel-V9Jhy4/node_modules/cdk-alexa-skill/lib/skill.js:102:54)",
+              "/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:8432:58",
+              "Kernel._wrapSandboxCode (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:8860:24)",
+              "Kernel._create (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:8432:34)",
+              "Kernel.create (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:8173:29)",
+              "KernelHost.processRequest (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:9757:36)",
+              "KernelHost.run (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:9720:22)",
+              "Immediate._onImmediate (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:9721:46)",
+              "processImmediate (node:internal/timers:464:21)"
+            ]
+          }
+        ],
+        "/CDK-Deploy-Pipeline/Deploy-Tooling/Plant-Status-Stack/alexa_skill/Provider/framework-onEvent/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "alexaskillProviderframeworkonEventServiceRole6BFA3302",
+            "trace": [
+              "new Role (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/jsii-kernel-V9Jhy4/node_modules/@aws-cdk/aws-iam/lib/role.js:72:22)",
+              "new Function (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/jsii-kernel-V9Jhy4/node_modules/@aws-cdk/aws-lambda/lib/function.js:80:35)",
+              "Provider.createFunction (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/jsii-kernel-V9Jhy4/node_modules/@aws-cdk/custom-resources/lib/provider-framework/provider.js:69:20)",
+              "new Provider (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/jsii-kernel-V9Jhy4/node_modules/@aws-cdk/custom-resources/lib/provider-framework/provider.js:39:38)",
+              "new Skill (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/jsii-kernel-V9Jhy4/node_modules/cdk-alexa-skill/lib/skill.js:115:31)",
+              "/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:8432:58",
+              "Kernel._wrapSandboxCode (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:8860:24)",
+              "Kernel._create (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:8432:34)",
+              "Kernel.create (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:8173:29)",
+              "KernelHost.processRequest (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:9757:36)",
+              "KernelHost.run (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:9720:22)",
+              "Immediate._onImmediate (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:9721:46)",
+              "processImmediate (node:internal/timers:464:21)"
+            ]
+          }
+        ],
+        "/CDK-Deploy-Pipeline/Deploy-Tooling/Plant-Status-Stack/alexa_skill/Provider/framework-onEvent/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "alexaskillProviderframeworkonEventServiceRoleDefaultPolicyAD7D1DB1",
+            "trace": [
+              "new Policy (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/jsii-kernel-V9Jhy4/node_modules/@aws-cdk/aws-iam/lib/policy.js:56:26)",
+              "Role.addToPrincipalPolicy (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/jsii-kernel-V9Jhy4/node_modules/@aws-cdk/aws-iam/lib/role.js:209:34)",
+              "Function.addToPrincipal (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/jsii-kernel-V9Jhy4/node_modules/@aws-cdk/aws-iam/lib/grant.js:90:65)",
+              "Function.addToPrincipalOrResource (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/jsii-kernel-V9Jhy4/node_modules/@aws-cdk/aws-iam/lib/grant.js:45:30)",
+              "Function.grantInvoke (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/jsii-kernel-V9Jhy4/node_modules/@aws-cdk/aws-lambda/lib/function-base.js:125:31)",
+              "Provider.createFunction (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/jsii-kernel-V9Jhy4/node_modules/@aws-cdk/custom-resources/lib/provider-framework/provider.js:82:29)",
+              "new Provider (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/jsii-kernel-V9Jhy4/node_modules/@aws-cdk/custom-resources/lib/provider-framework/provider.js:39:38)",
+              "new Skill (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/jsii-kernel-V9Jhy4/node_modules/cdk-alexa-skill/lib/skill.js:115:31)",
+              "/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:8432:58",
+              "Kernel._wrapSandboxCode (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:8860:24)",
+              "Kernel._create (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:8432:34)",
+              "Kernel.create (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:8173:29)",
+              "KernelHost.processRequest (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:9757:36)",
+              "KernelHost.run (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:9720:22)",
+              "Immediate._onImmediate (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:9721:46)",
+              "processImmediate (node:internal/timers:464:21)"
+            ]
+          }
+        ],
+        "/CDK-Deploy-Pipeline/Deploy-Tooling/Plant-Status-Stack/alexa_skill/Provider/framework-onEvent/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "alexaskillProviderframeworkonEvent88B9CCE4",
+            "trace": [
+              "new Function (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/jsii-kernel-V9Jhy4/node_modules/@aws-cdk/aws-lambda/lib/function.js:143:26)",
+              "Provider.createFunction (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/jsii-kernel-V9Jhy4/node_modules/@aws-cdk/custom-resources/lib/provider-framework/provider.js:69:20)",
+              "new Provider (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/jsii-kernel-V9Jhy4/node_modules/@aws-cdk/custom-resources/lib/provider-framework/provider.js:39:38)",
+              "new Skill (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/jsii-kernel-V9Jhy4/node_modules/cdk-alexa-skill/lib/skill.js:115:31)",
+              "/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:8432:58",
+              "Kernel._wrapSandboxCode (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:8860:24)",
+              "Kernel._create (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:8432:34)",
+              "Kernel.create (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:8173:29)",
+              "KernelHost.processRequest (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:9757:36)",
+              "KernelHost.run (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:9720:22)",
+              "Immediate._onImmediate (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:9721:46)",
+              "processImmediate (node:internal/timers:464:21)"
+            ]
+          }
+        ],
+        "/CDK-Deploy-Pipeline/Deploy-Tooling/Plant-Status-Stack/alexa_skill/GetLambdaPermissionStatementIdCustomResource/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "alexaskillGetLambdaPermissionStatementIdCustomResource6CF7A2B6",
+            "trace": [
+              "new CustomResource (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/jsii-kernel-V9Jhy4/node_modules/@aws-cdk/core/lib/custom-resource.js:30:25)",
+              "new Skill (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/jsii-kernel-V9Jhy4/node_modules/cdk-alexa-skill/lib/skill.js:114:60)",
+              "/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:8432:58",
+              "Kernel._wrapSandboxCode (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:8860:24)",
+              "Kernel._create (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:8432:34)",
+              "Kernel.create (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:8173:29)",
+              "KernelHost.processRequest (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:9757:36)",
+              "KernelHost.run (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:9720:22)",
+              "Immediate._onImmediate (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:9721:46)",
+              "processImmediate (node:internal/timers:464:21)"
+            ]
+          }
+        ],
+        "/CDK-Deploy-Pipeline/Deploy-Tooling/Plant-Status-Stack/alexa_skill/RemovePermissionCustomResource/CustomResourcePolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "alexaskillRemovePermissionCustomResourceCustomResourcePolicyE59DBB3C",
+            "trace": [
+              "new Policy (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/jsii-kernel-V9Jhy4/node_modules/@aws-cdk/aws-iam/lib/policy.js:56:26)",
+              "new AwsCustomResource (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/jsii-kernel-V9Jhy4/node_modules/@aws-cdk/custom-resources/lib/aws-custom-resource/aws-custom-resource.js:213:24)",
+              "new Skill (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/jsii-kernel-V9Jhy4/node_modules/cdk-alexa-skill/lib/skill.js:147:52)",
+              "/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:8432:58",
+              "Kernel._wrapSandboxCode (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:8860:24)",
+              "Kernel._create (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:8432:34)",
+              "Kernel.create (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:8173:29)",
+              "KernelHost.processRequest (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:9757:36)",
+              "KernelHost.run (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:9720:22)",
+              "Immediate._onImmediate (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:9721:46)",
+              "processImmediate (node:internal/timers:464:21)"
+            ]
+          }
+        ],
+        "/CDK-Deploy-Pipeline/Deploy-Tooling/Plant-Status-Stack/alexa_skill/RemovePermissionCustomResource/Resource/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "alexaskillRemovePermissionCustomResourceA13E5A3D",
+            "trace": [
+              "new CustomResource (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/jsii-kernel-V9Jhy4/node_modules/@aws-cdk/core/lib/custom-resource.js:30:25)",
+              "new AwsCustomResource (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/jsii-kernel-V9Jhy4/node_modules/@aws-cdk/custom-resources/lib/aws-custom-resource/aws-custom-resource.js:220:31)",
+              "new Skill (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/jsii-kernel-V9Jhy4/node_modules/cdk-alexa-skill/lib/skill.js:147:52)",
+              "/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:8432:58",
+              "Kernel._wrapSandboxCode (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:8860:24)",
+              "Kernel._create (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:8432:34)",
+              "Kernel.create (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:8173:29)",
+              "KernelHost.processRequest (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:9757:36)",
+              "KernelHost.run (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:9720:22)",
+              "Immediate._onImmediate (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:9721:46)",
+              "processImmediate (node:internal/timers:464:21)"
+            ]
+          }
+        ],
+        "/CDK-Deploy-Pipeline/Deploy-Tooling/Plant-Status-Stack/alexa_skill/AddPermissionCustomResource/CustomResourcePolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "alexaskillAddPermissionCustomResourceCustomResourcePolicy686C9162",
+            "trace": [
+              "new Policy (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/jsii-kernel-V9Jhy4/node_modules/@aws-cdk/aws-iam/lib/policy.js:56:26)",
+              "new AwsCustomResource (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/jsii-kernel-V9Jhy4/node_modules/@aws-cdk/custom-resources/lib/aws-custom-resource/aws-custom-resource.js:213:24)",
+              "new Skill (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/jsii-kernel-V9Jhy4/node_modules/cdk-alexa-skill/lib/skill.js:168:49)",
+              "/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:8432:58",
+              "Kernel._wrapSandboxCode (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:8860:24)",
+              "Kernel._create (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:8432:34)",
+              "Kernel.create (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:8173:29)",
+              "KernelHost.processRequest (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:9757:36)",
+              "KernelHost.run (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:9720:22)",
+              "Immediate._onImmediate (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:9721:46)",
+              "processImmediate (node:internal/timers:464:21)"
+            ]
+          }
+        ],
+        "/CDK-Deploy-Pipeline/Deploy-Tooling/Plant-Status-Stack/alexa_skill/AddPermissionCustomResource/Resource/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "alexaskillAddPermissionCustomResourceF24F9427",
+            "trace": [
+              "new CustomResource (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/jsii-kernel-V9Jhy4/node_modules/@aws-cdk/core/lib/custom-resource.js:30:25)",
+              "new AwsCustomResource (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/jsii-kernel-V9Jhy4/node_modules/@aws-cdk/custom-resources/lib/aws-custom-resource/aws-custom-resource.js:220:31)",
+              "new Skill (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/jsii-kernel-V9Jhy4/node_modules/cdk-alexa-skill/lib/skill.js:168:49)",
+              "/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:8432:58",
+              "Kernel._wrapSandboxCode (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:8860:24)",
+              "Kernel._create (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:8432:34)",
+              "Kernel.create (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:8173:29)",
+              "KernelHost.processRequest (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:9757:36)",
+              "KernelHost.run (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:9720:22)",
+              "Immediate._onImmediate (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:9721:46)",
+              "processImmediate (node:internal/timers:464:21)"
+            ]
+          }
+        ],
+        "/CDK-Deploy-Pipeline/Deploy-Tooling/Plant-Status-Stack/AWS679f53fac002430cb0da5b7982bd2287/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AWS679f53fac002430cb0da5b7982bd2287ServiceRoleC1EA0FF2",
+            "trace": [
+              "new Role (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/jsii-kernel-V9Jhy4/node_modules/@aws-cdk/aws-iam/lib/role.js:72:22)",
+              "new Function (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/jsii-kernel-V9Jhy4/node_modules/@aws-cdk/aws-lambda/lib/function.js:80:35)",
+              "SingletonFunction.ensureLambda (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/jsii-kernel-V9Jhy4/node_modules/@aws-cdk/aws-lambda/lib/singleton-lambda.js:109:16)",
+              "new SingletonFunction (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/jsii-kernel-V9Jhy4/node_modules/@aws-cdk/aws-lambda/lib/singleton-lambda.js:26:36)",
+              "new AwsCustomResource (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/jsii-kernel-V9Jhy4/node_modules/@aws-cdk/custom-resources/lib/aws-custom-resource/aws-custom-resource.js:174:26)",
+              "new Skill (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/jsii-kernel-V9Jhy4/node_modules/cdk-alexa-skill/lib/skill.js:147:52)",
+              "/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:8432:58",
+              "Kernel._wrapSandboxCode (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:8860:24)",
+              "Kernel._create (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:8432:34)",
+              "Kernel.create (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:8173:29)",
+              "KernelHost.processRequest (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:9757:36)",
+              "KernelHost.run (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:9720:22)",
+              "Immediate._onImmediate (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:9721:46)",
+              "processImmediate (node:internal/timers:464:21)"
+            ]
+          }
+        ],
+        "/CDK-Deploy-Pipeline/Deploy-Tooling/Plant-Status-Stack/AWS679f53fac002430cb0da5b7982bd2287/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AWS679f53fac002430cb0da5b7982bd22872D164C4C",
+            "trace": [
+              "new Function (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/jsii-kernel-V9Jhy4/node_modules/@aws-cdk/aws-lambda/lib/function.js:143:26)",
+              "SingletonFunction.ensureLambda (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/jsii-kernel-V9Jhy4/node_modules/@aws-cdk/aws-lambda/lib/singleton-lambda.js:109:16)",
+              "new SingletonFunction (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/jsii-kernel-V9Jhy4/node_modules/@aws-cdk/aws-lambda/lib/singleton-lambda.js:26:36)",
+              "new AwsCustomResource (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/jsii-kernel-V9Jhy4/node_modules/@aws-cdk/custom-resources/lib/aws-custom-resource/aws-custom-resource.js:174:26)",
+              "new Skill (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/jsii-kernel-V9Jhy4/node_modules/cdk-alexa-skill/lib/skill.js:147:52)",
+              "/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:8432:58",
+              "Kernel._wrapSandboxCode (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:8860:24)",
+              "Kernel._create (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:8432:34)",
+              "Kernel.create (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:8173:29)",
+              "KernelHost.processRequest (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:9757:36)",
+              "KernelHost.run (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:9720:22)",
+              "Immediate._onImmediate (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:9721:46)",
+              "processImmediate (node:internal/timers:464:21)"
+            ]
+          }
+        ],
+        "/CDK-Deploy-Pipeline/Deploy-Tooling/Plant-Status-Stack/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata",
+            "trace": [
+              "new MetadataResource (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/jsii-kernel-V9Jhy4/node_modules/@aws-cdk/core/lib/private/metadata-resource.js:22:30)",
+              "/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/jsii-kernel-V9Jhy4/node_modules/@aws-cdk/core/lib/private/synthesis.js:139:9",
+              "visit (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/jsii-kernel-V9Jhy4/node_modules/@aws-cdk/core/lib/private/synthesis.js:200:9)",
+              "visit (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/jsii-kernel-V9Jhy4/node_modules/@aws-cdk/core/lib/private/synthesis.js:197:9)",
+              "injectMetadataResources (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/jsii-kernel-V9Jhy4/node_modules/@aws-cdk/core/lib/private/synthesis.js:128:5)",
+              "Object.synthesize (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/jsii-kernel-V9Jhy4/node_modules/@aws-cdk/core/lib/private/synthesis.js:17:5)",
+              "Stage.synth (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/jsii-kernel-V9Jhy4/node_modules/@aws-cdk/core/lib/stage.js:100:41)",
+              "Object.pipelineSynth (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/jsii-kernel-V9Jhy4/node_modules/@aws-cdk/pipelines/lib/private/construct-internals.js:25:18)",
+              "CdkStage.addApplication (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/jsii-kernel-V9Jhy4/node_modules/@aws-cdk/pipelines/lib/legacy/stage.js:66:43)",
+              "CdkPipeline.addApplicationStage (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/jsii-kernel-V9Jhy4/node_modules/@aws-cdk/pipelines/lib/legacy/pipeline.js:174:15)",
+              "/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:8248:134",
+              "Kernel._wrapSandboxCode (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:8860:24)",
+              "/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:8248:107",
+              "Kernel._ensureSync (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:8841:28)",
+              "Kernel.invoke (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:8248:34)",
+              "KernelHost.processRequest (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:9757:36)",
+              "KernelHost.run (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:9720:22)",
+              "Immediate._onImmediate (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:9721:46)",
+              "processImmediate (node:internal/timers:464:21)"
+            ]
+          }
+        ],
+        "/CDK-Deploy-Pipeline/Deploy-Tooling/Plant-Status-Stack/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion",
+            "trace": [
+              "addBootstrapVersionRule (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/jsii-kernel-V9Jhy4/node_modules/@aws-cdk/core/lib/stack-synthesizers/default-synthesizer.js:442:19)",
+              "DefaultStackSynthesizer.synthesize (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/jsii-kernel-V9Jhy4/node_modules/@aws-cdk/core/lib/stack-synthesizers/default-synthesizer.js:205:13)",
+              "/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/jsii-kernel-V9Jhy4/node_modules/@aws-cdk/core/lib/private/synthesis.js:155:35",
+              "visit (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/jsii-kernel-V9Jhy4/node_modules/@aws-cdk/core/lib/private/synthesis.js:200:9)",
+              "visit (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/jsii-kernel-V9Jhy4/node_modules/@aws-cdk/core/lib/private/synthesis.js:197:9)",
+              "synthesizeTree (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/jsii-kernel-V9Jhy4/node_modules/@aws-cdk/core/lib/private/synthesis.js:148:5)",
+              "Object.synthesize (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/jsii-kernel-V9Jhy4/node_modules/@aws-cdk/core/lib/private/synthesis.js:33:5)",
+              "Stage.synth (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/jsii-kernel-V9Jhy4/node_modules/@aws-cdk/core/lib/stage.js:100:41)",
+              "Object.pipelineSynth (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/jsii-kernel-V9Jhy4/node_modules/@aws-cdk/pipelines/lib/private/construct-internals.js:25:18)",
+              "CdkStage.addApplication (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/jsii-kernel-V9Jhy4/node_modules/@aws-cdk/pipelines/lib/legacy/stage.js:66:43)",
+              "CdkPipeline.addApplicationStage (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/jsii-kernel-V9Jhy4/node_modules/@aws-cdk/pipelines/lib/legacy/pipeline.js:174:15)",
+              "/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:8248:134",
+              "Kernel._wrapSandboxCode (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:8860:24)",
+              "/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:8248:107",
+              "Kernel._ensureSync (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:8841:28)",
+              "Kernel.invoke (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:8248:34)",
+              "KernelHost.processRequest (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:9757:36)",
+              "KernelHost.run (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:9720:22)",
+              "Immediate._onImmediate (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:9721:46)",
+              "processImmediate (node:internal/timers:464:21)"
+            ]
+          }
+        ],
+        "/CDK-Deploy-Pipeline/Deploy-Tooling/Plant-Status-Stack/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion",
+            "trace": [
+              "addBootstrapVersionRule (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/jsii-kernel-V9Jhy4/node_modules/@aws-cdk/core/lib/stack-synthesizers/default-synthesizer.js:450:5)",
+              "DefaultStackSynthesizer.synthesize (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/jsii-kernel-V9Jhy4/node_modules/@aws-cdk/core/lib/stack-synthesizers/default-synthesizer.js:205:13)",
+              "/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/jsii-kernel-V9Jhy4/node_modules/@aws-cdk/core/lib/private/synthesis.js:155:35",
+              "visit (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/jsii-kernel-V9Jhy4/node_modules/@aws-cdk/core/lib/private/synthesis.js:200:9)",
+              "visit (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/jsii-kernel-V9Jhy4/node_modules/@aws-cdk/core/lib/private/synthesis.js:197:9)",
+              "synthesizeTree (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/jsii-kernel-V9Jhy4/node_modules/@aws-cdk/core/lib/private/synthesis.js:148:5)",
+              "Object.synthesize (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/jsii-kernel-V9Jhy4/node_modules/@aws-cdk/core/lib/private/synthesis.js:33:5)",
+              "Stage.synth (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/jsii-kernel-V9Jhy4/node_modules/@aws-cdk/core/lib/stage.js:100:41)",
+              "Object.pipelineSynth (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/jsii-kernel-V9Jhy4/node_modules/@aws-cdk/pipelines/lib/private/construct-internals.js:25:18)",
+              "CdkStage.addApplication (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/jsii-kernel-V9Jhy4/node_modules/@aws-cdk/pipelines/lib/legacy/stage.js:66:43)",
+              "CdkPipeline.addApplicationStage (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/jsii-kernel-V9Jhy4/node_modules/@aws-cdk/pipelines/lib/legacy/pipeline.js:174:15)",
+              "/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:8248:134",
+              "Kernel._wrapSandboxCode (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:8860:24)",
+              "/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:8248:107",
+              "Kernel._ensureSync (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:8841:28)",
+              "Kernel.invoke (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:8248:34)",
+              "KernelHost.processRequest (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:9757:36)",
+              "KernelHost.run (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:9720:22)",
+              "Immediate._onImmediate (/private/var/folders/4d/k70gv63x1x55w93cmh2fzp_40000gp/T/tmp7bp8xn72/lib/program.js:9721:46)",
+              "processImmediate (node:internal/timers:464:21)"
+            ]
+          }
+        ]
+      },
+      "displayName": "CDK-Deploy-Pipeline/Deploy-Tooling/Plant-Status-Stack"
+    }
+  }
+}

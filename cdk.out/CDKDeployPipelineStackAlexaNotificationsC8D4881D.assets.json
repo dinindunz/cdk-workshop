@@ -1,0 +1,34 @@
+{
+  "version": "14.0.0",
+  "files": {
+    "a1a83ebf5b8b6265f38dbe6f676c4a3b94dc588338dff62c1a5b9d6d76a4d78e": {
+      "source": {
+        "path": "asset.a1a83ebf5b8b6265f38dbe6f676c4a3b94dc588338dff62c1a5b9d6d76a4d78e",
+        "packaging": "zip"
+      },
+      "destinations": {
+        "872203653859-ap-southeast-2": {
+          "bucketName": "cdk-hnb659fds-assets-872203653859-ap-southeast-2",
+          "objectKey": "a1a83ebf5b8b6265f38dbe6f676c4a3b94dc588338dff62c1a5b9d6d76a4d78e.zip",
+          "region": "ap-southeast-2",
+          "assumeRoleArn": "arn:${AWS::Partition}:iam::872203653859:role/cdk-hnb659fds-file-publishing-role-872203653859-ap-southeast-2"
+        }
+      }
+    },
+    "36ee143677b18f0c3c7743ca8b2e4274b4d882c571edfe5357337473c156a084": {
+      "source": {
+        "path": "CDKDeployPipelineStackAlexaNotificationsC8D4881D.template.json",
+        "packaging": "file"
+      },
+      "destinations": {
+        "872203653859-ap-southeast-2": {
+          "bucketName": "cdk-hnb659fds-assets-872203653859-ap-southeast-2",
+          "objectKey": "36ee143677b18f0c3c7743ca8b2e4274b4d882c571edfe5357337473c156a084.json",
+          "region": "ap-southeast-2",
+          "assumeRoleArn": "arn:${AWS::Partition}:iam::872203653859:role/cdk-hnb659fds-file-publishing-role-872203653859-ap-southeast-2"
+        }
+      }
+    }
+  },
+  "dockerImages": {}
+}

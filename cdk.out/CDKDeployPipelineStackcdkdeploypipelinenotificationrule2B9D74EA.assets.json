@@ -1,0 +1,19 @@
+{
+  "version": "14.0.0",
+  "files": {
+    "9f13b8e9f67ed954323521c39faf3a64ba691c0200f01531383a77b07a40adf2": {
+      "source": {
+        "path": "CDKDeployPipelineStackcdkdeploypipelinenotificationrule2B9D74EA.template.json",
+        "packaging": "file"
+      },
+      "destinations": {
+        "current_account-current_region": {
+          "bucketName": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}",
+          "objectKey": "9f13b8e9f67ed954323521c39faf3a64ba691c0200f01531383a77b07a40adf2.json",
+          "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-file-publishing-role-${AWS::AccountId}-${AWS::Region}"
+        }
+      }
+    }
+  },
+  "dockerImages": {}
+}
